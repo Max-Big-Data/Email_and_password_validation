@@ -1,3 +1,4 @@
+# Using regular expression module from Standard Library
 import re
 
 """ EMAIL VALIDATION """
