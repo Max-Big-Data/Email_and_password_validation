@@ -11,7 +11,7 @@ def validate_email(user_email):
     # compile regex into pattern
     pattern = re.compile(reg)
 
-    # using pattern to search the input string
+    # using pattern to search the input string and validating condition
     if pattern.search(user_email):
         return 'Email is valid.'
     else:
@@ -26,11 +26,14 @@ user_pass = input('Enter your password: ')
 
 def validate_pass(user_pass):
     # regex expression to use
-    reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{6,20}$"
+    # {8,20} at the end of "reg" means password has to be 6-20 characters long
+    reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{8,20}$"
     # compile regex into pattern
     pattern = re.compile(reg)
     # using pattern to search the input string
-    if pattern.search(user_pass):
+    user_pass_check = (pattern.search(user_pass))
+    #validating condition
+    if user_pass_check:
         return 'Password is valid.'
     else:
         return 'Password is not valid. Try again!'
